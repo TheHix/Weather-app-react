@@ -53,11 +53,9 @@ body{
 .icon-btn:hover{
     cursor: pointer;
     user-select: none;  
-    opacity: 0.4;
+    opacity: 0.6;
 }
-.icon-btn:active{  
-    opacity: 1;
-}
+
 .info{
     height: 390px;
     width: 100%;
@@ -80,12 +78,9 @@ body{
     border-bottom: 1px solid black;
     padding: 16px;
     position: relative;
-    display: none;
-}
-.left-info__screen.active{
     height: 345px;
     display: block;
-    overflow-y:scroll;
+    overflow-y:auto;
     scroll-behavior: smooth;
 }
 .left-info__screen.active::-webkit-scrollbar {
@@ -110,6 +105,7 @@ body{
     position: absolute;
     right: 26px;
     bottom: 23px;
+    cursor: pointer;
 }
 .now__temperature {
     font-size: 70px;
