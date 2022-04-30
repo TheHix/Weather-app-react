@@ -1,38 +1,241 @@
-.App {
-  text-align: center;
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+body{
+    background: #FFFFFF;
+    font-family: 'Roboto';
+    font-size: 18px;
 }
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    margin-top: -100px;
+    background: #FFFFFF;
+    max-width: 620px;
+    min-height: 460px;
+    padding: 20px;
+    box-sizing: content-box;
+}
+.search__bar {
+    position: relative;
+    padding: 0px 15px;
+    border:1px solid black;
+    border-bottom: none;
+}
+.search__bar__input {
+    height: 45px;;
+    width: 90%;
+    font-size: 18px;
+}
+.search__bar__btn {
+    background-color: transparent;
+    position:absolute;
+    right: 10px;
+    top: 10px;
+}
+.iconBtn:hover{
+    cursor: pointer;
+    user-select: none;  
+    opacity: 0.4;
+}
+.iconBtn:active{  
+    opacity: 1;
+}
+.info{
+    height: 390px;
+    width: 100%;
+    display: flex;
+}
+.info-block{
+    width: 50%;
+}
+.info__left {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+.info__right{
+    border: 1px solid black;
+    border-left: none;
+}
+.info__left__screen{
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 16px;
+    position: relative;
+    display: none;
+}
+.info__left__screen.active{
+    height: 345px;
+    display: block;
+    overflow-y:scroll;
+    scroll-behavior: smooth;
+}
+.info__left__screen.active::-webkit-scrollbar {
+    height: 12px;
+    background-color: #FFFFFF;
+    width: 8px;
+}
+.info__left__screen.active::-webkit-scrollbar-thumb {
+    background-color: #4b4848;
+}
+.screen__WeatherIcon {
+    position:absolute;
+    width: 170px;
+    height: 170px;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+.screen__HeartIcon {
+    background-color: transparent;
+    position: absolute;
+    right: 26px;
+    bottom: 23px;
+}
+.screen__temperature {
+    font-size: 70px;
+    font-weight: 400;
+}
+.cityName {
+    font-size: 34px;
+    font-weight: 400;
+}
+.screen__CityName__TabNow {
+    position: absolute;
+    width: 120px;
+    left: 17px;
+    bottom: 23px;
+}
+.screen__CityName__TabDetalis{
+    margin-bottom: 25px;
+}
+li {
+    list-style-type: none;
+    margin-bottom: 15px;
+    position: relative;
+}
+.locations__list li {
+    font-size: 26px;
+}
+.screen__detalis li {
+    font-size: 26px;
+}
+.buttons {
+    display: flex;
+    height: 45px;
+}
+.btn.tab {
+    flex: 1 1 33.333%;
+    line-height: 45px;
+    text-align:center;
+}
+.btn.tab:not(:last-child) {
+    border-right: 1px solid black;
+}
+.btn.tab:hover{
+    background-color:#4b4848;
+    color: #FFFFFF;
+    cursor: pointer;
+    user-select: none;
+}
+.btn.tab.active {
+    color: #FFFFFF;
+    background: #000000;
+}
+.locations__name {
+    min-height: 68px;
+    font-size: 28px;
+    line-height: 68px;
+    padding: 0px 20px;
+    border-bottom: 1px solid black;
+}
+.info__right__locations {
+    display: flex;
+    flex-direction: column;
+}
+.locations__list {
+    padding: 7% 5% 1% 5%;
+    overflow-y:scroll;
+    scroll-behavior: smooth;
+    height: 319px;
+}
+.locations__list *{
+    cursor: pointer;
+    user-select: none;
+}
+.locations__list::-webkit-scrollbar {
+    height: 10px;
+    background-color: #FFFFFF;
+    width: 8px;
+}
+.locations__list::-webkit-scrollbar-thumb {
+    background-color: #4b4848;
+}
+.screen-block__ListWeeks {
+    display: flex;
+    flex-direction: column;
+}
+.screen-block__CityName__foreCast {
+    margin-bottom: 30px;
+}
+.week{
+    padding: 12px;
+    border: 1px solid black;
+    height: 120px;
+    width: 100%;
+    margin-bottom: 9px;
+    position: relative;
+}
+.week__component__group{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 33px;
+}
+.icon__weather__forecast {
+    position: absolute;
+    right: 5px;
+    bottom: -5px;
+    width: 60px;
+    height: 60px;
+}
+.icon_cross{
+    background-color: transparent;
+    position:absolute;
+    top: -2px;
+    right: 3px;
+    font-size: 30px;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.screen__HeartIcon.iconBtn.active {
+    fill:black;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+@media screen and (max-width: 767px) {
+    .info__left{
+        width: 100%;
+    }
+    .info__right{
+        width: 100%;
+        border-left: 1px solid black;
+        border-top: none;
+    }
+    .info{
+        flex-direction: column;
+    }
+} 
