@@ -19,11 +19,13 @@ body{
     font-size: 18px;
 }
 #root {
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .wrapper{
+    width: 100%;
     margin-top: -100px;
     background: #FFFFFF;
     max-width: 620px;
@@ -31,29 +33,29 @@ body{
     padding: 20px;
     box-sizing: content-box;
 }
-.search__bar {
+.search-bar {
     position: relative;
     padding: 0px 15px;
     border:1px solid black;
     border-bottom: none;
 }
-.search__bar__input {
+.search-bar__input {
     height: 45px;;
     width: 90%;
     font-size: 18px;
 }
-.search__bar__btn {
+.search-bar__btn {
     background-color: transparent;
     position:absolute;
     right: 10px;
     top: 10px;
 }
-.iconBtn:hover{
+.icon-btn:hover{
     cursor: pointer;
     user-select: none;  
     opacity: 0.4;
 }
-.iconBtn:active{  
+.icon-btn:active{  
     opacity: 1;
 }
 .info{
@@ -64,34 +66,34 @@ body{
 .info-block{
     width: 50%;
 }
-.info__left {
+.left-info {
     display: flex;
     flex-direction: column;
     border: 1px solid black;
 }
-.info__right{
+.right-info{
     border: 1px solid black;
     border-left: none;
 }
-.info__left__screen{
+.left-info__screen{
     width: 100%;
     border-bottom: 1px solid black;
     padding: 16px;
     position: relative;
     display: none;
 }
-.info__left__screen.active{
+.left-info__screen.active{
     height: 345px;
     display: block;
     overflow-y:scroll;
     scroll-behavior: smooth;
 }
-.info__left__screen.active::-webkit-scrollbar {
+.left-info__screen.active::-webkit-scrollbar {
     height: 12px;
     background-color: #FFFFFF;
     width: 8px;
 }
-.info__left__screen.active::-webkit-scrollbar-thumb {
+.left-info__screen.active::-webkit-scrollbar-thumb {
     background-color: #4b4848;
 }
 .screen__WeatherIcon {
@@ -103,27 +105,27 @@ body{
     margin-right: -50%;
     transform: translate(-50%, -50%)
 }
-.screen__HeartIcon {
+.now__icon-heart {
     background-color: transparent;
     position: absolute;
     right: 26px;
     bottom: 23px;
 }
-.screen__temperature {
+.now__temperature {
     font-size: 70px;
     font-weight: 400;
 }
-.cityName {
+.city-name {
     font-size: 34px;
     font-weight: 400;
 }
-.screen__CityName__TabNow {
+.now__city-name {
     position: absolute;
     width: 120px;
     left: 17px;
     bottom: 23px;
 }
-.screen__CityName__TabDetalis{
+.detalis__city-name{
     margin-bottom: 25px;
 }
 li {
@@ -134,7 +136,7 @@ li {
 .locations__list li {
     font-size: 26px;
 }
-.screen__detalis li {
+.detalis__list li {
     font-size: 26px;
 }
 .buttons {
@@ -145,6 +147,9 @@ li {
     flex: 1 1 33.333%;
     line-height: 45px;
     text-align:center;
+    background: inherit;
+    font-size: 18px;
+    transition: all .1s ease-in-out;
 }
 .btn.tab:not(:last-child) {
     border-right: 1px solid black;
@@ -166,7 +171,7 @@ li {
     padding: 0px 20px;
     border-bottom: 1px solid black;
 }
-.info__right__locations {
+.right-info__locations {
     display: flex;
     flex-direction: column;
 }
@@ -188,11 +193,11 @@ li {
 .locations__list::-webkit-scrollbar-thumb {
     background-color: #4b4848;
 }
-.screen-block__ListWeeks {
+.forecast__list-weeks {
     display: flex;
     flex-direction: column;
 }
-.screen-block__CityName__foreCast {
+.forecast__wrapper {
     margin-bottom: 30px;
 }
 .week{
@@ -223,14 +228,11 @@ li {
     font-size: 30px;
 
 }
-.screen__HeartIcon.iconBtn.active {
-    fill:black;
-}
 @media screen and (max-width: 767px) {
-    .info__left{
+    .left-info{
         width: 100%;
     }
-    .info__right{
+    .right-info{
         width: 100%;
         border-left: 1px solid black;
         border-top: none;
