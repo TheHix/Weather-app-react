@@ -1,5 +1,5 @@
-import React from 'react';
-import Shape from '../img/Shape.svg';
+import React from "react";
+import Shape from "../img/Shape.svg";
 const SearchBar = () => {
     return (
         <form className="search-bar">

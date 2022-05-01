@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import TabDetalis from "../tabs/TabDetalis";
-import TabForecast from "../tabs/TabForecast";
-import TabNow from "../tabs/TabNow";
+import TabDetalis from "../tabs/tabDetalis/TabDetalis";
+import TabForecast from "../tabs/tabForecast/TabForecast";
+import TabNow from "../tabs/tabNow/TabNow";
 const tabs = {
     now: 1,
     detalis: 2,

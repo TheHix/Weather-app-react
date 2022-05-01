@@ -204,19 +204,19 @@ li {
     margin-bottom: 9px;
     position: relative;
 }
-.week__component__group{
+.week__row{
     display: flex;
     justify-content: space-between;
     margin-bottom: 33px;
 }
-.icon__weather__forecast {
+.icon-weather__forecast {
     position: absolute;
     right: 5px;
     bottom: -5px;
     width: 60px;
     height: 60px;
 }
-.icon_cross{
+.locations-item__btn{
     background-color: transparent;
     position:absolute;
     top: -2px;

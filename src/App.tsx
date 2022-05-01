@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import LeftScreen from "./components/screens/LeftScreen";
-import RightScreen from "./components/screens/RightScreen";
+import RightScreen from "./components/screens/rightScreen/RightScreen";
 import SearchBar from "./components/SearchBar";
 const App = () => {
     return (

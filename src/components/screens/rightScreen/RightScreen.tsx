@@ -5,7 +5,7 @@ const RightScreen = () => {
         <div className="right-info info-block">
             <div className="right-info__locations">
                 <div className="locations__name">Added Locations:</div>
-                <ul className="locations__list"></ul>
+                
             </div>
         </div>
     );
