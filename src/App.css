@@ -1,21 +1,80 @@
-*{padding: 0;margin: 0;border: 0;}
-*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
-:focus,:active{outline: none;}
-a:focus,a:active{outline: none;}
-nav,footer,header,aside{display: block;}
-html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
-input,button,textarea{font-family:inherit;}
-input::-ms-clear{display: none;}
-button{cursor: pointer;}
-button::-moz-focus-inner{padding:0;border:0;}
-a,a:visited{text-decoration: none;}
-a:hover{text-decoration: none;}
-ul li{list-style: none;}
-img{vertical-align: top;}
-h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
-body{
-    background: #FFFFFF;
-    font-family: 'Roboto';
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,
+:active {
+    outline: none;
+}
+a:focus,
+a:active {
+    outline: none;
+}
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+input::-ms-clear {
+    display: none;
+}
+button {
+    cursor: pointer;
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+a,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+body {
+    background: #ffffff;
+    font-family: "Roboto";
     font-size: 18px;
 }
 #root {
@@ -24,10 +83,10 @@ body{
     justify-content: center;
     align-items: center;
 }
-.wrapper{
+.wrapper {
     width: 100%;
     margin-top: -100px;
-    background: #FFFFFF;
+    background: #ffffff;
     max-width: 620px;
     min-height: 460px;
     padding: 20px;
@@ -36,32 +95,32 @@ body{
 .search-bar {
     position: relative;
     padding: 0px 15px;
-    border:1px solid black;
+    border: 1px solid black;
     border-bottom: none;
 }
 .search-bar__input {
-    height: 45px;;
+    height: 45px;
     width: 90%;
     font-size: 18px;
 }
 .search-bar__btn {
     background-color: transparent;
-    position:absolute;
+    position: absolute;
     right: 10px;
     top: 10px;
 }
-.icon-btn:hover{
+.icon-btn:hover {
     cursor: pointer;
-    user-select: none;  
+    user-select: none;
     opacity: 0.6;
 }
 
-.info{
+.info {
     height: 390px;
     width: 100%;
     display: flex;
 }
-.info-block{
+.info-block {
     width: 50%;
 }
 .left-info {
@@ -69,36 +128,36 @@ body{
     flex-direction: column;
     border: 1px solid black;
 }
-.right-info{
+.right-info {
     border: 1px solid black;
     border-left: none;
 }
-.left-info__screen{
+.left-info__screen {
     width: 100%;
     border-bottom: 1px solid black;
     padding: 16px;
     position: relative;
     height: 345px;
     display: block;
-    overflow-y:auto;
+    overflow-y: auto;
     scroll-behavior: smooth;
 }
 .left-info__screen.active::-webkit-scrollbar {
     height: 12px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     width: 8px;
 }
 .left-info__screen.active::-webkit-scrollbar-thumb {
     background-color: #4b4848;
 }
 .screen__WeatherIcon {
-    position:absolute;
+    position: absolute;
     width: 170px;
     height: 170px;
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
 .now__icon-heart {
     background-color: transparent;
@@ -121,7 +180,7 @@ body{
     left: 17px;
     bottom: 23px;
 }
-.detalis__city-name{
+.detalis__city-name {
     margin-bottom: 25px;
 }
 li {
@@ -142,22 +201,22 @@ li {
 .btn.tab {
     flex: 1 1 33.333%;
     line-height: 45px;
-    text-align:center;
+    text-align: center;
     background: inherit;
     font-size: 18px;
-    transition: all .1s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 .btn.tab:not(:last-child) {
     border-right: 1px solid black;
 }
-.btn.tab:hover{
-    background-color:#4b4848;
-    color: #FFFFFF;
+.btn.tab:hover {
+    background-color: #4b4848;
+    color: #ffffff;
     cursor: pointer;
     user-select: none;
 }
 .btn.tab.active {
-    color: #FFFFFF;
+    color: #ffffff;
     background: #000000;
 }
 .locations__name {
@@ -173,17 +232,17 @@ li {
 }
 .locations__list {
     padding: 7% 5% 1% 5%;
-    overflow-y:scroll;
+    overflow-y: scroll;
     scroll-behavior: smooth;
     height: 319px;
 }
-.locations__list *{
+.locations__list * {
     cursor: pointer;
     user-select: none;
 }
 .locations__list::-webkit-scrollbar {
     height: 10px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     width: 8px;
 }
 .locations__list::-webkit-scrollbar-thumb {
@@ -196,7 +255,7 @@ li {
 .forecast__wrapper {
     margin-bottom: 30px;
 }
-.week{
+.week {
     padding: 12px;
     border: 1px solid black;
     height: 120px;
@@ -204,7 +263,7 @@ li {
     margin-bottom: 9px;
     position: relative;
 }
-.week__row{
+.week__row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 33px;
@@ -216,24 +275,47 @@ li {
     width: 60px;
     height: 60px;
 }
-.locations-item__btn{
+.locations-item__btn {
     background-color: transparent;
-    position:absolute;
+    position: absolute;
     top: -2px;
     right: 3px;
     font-size: 30px;
-
+}
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid black;
+    border-color: black transparent black transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 @media screen and (max-width: 767px) {
-    .left-info{
+    .left-info {
         width: 100%;
     }
-    .right-info{
+    .right-info {
         width: 100%;
         border-left: 1px solid black;
         border-top: none;
     }
-    .info{
+    .info {
         flex-direction: column;
     }
-} 
+}

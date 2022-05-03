@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import LeftScreen from "./components/screens/LeftScreen";
 import RightScreen from "./components/screens/rightScreen/RightScreen";
 import SearchBar from "./components/SearchBar";
+import { useAction } from "./hooks/useAction";
+import { useTypedSelector } from "./hooks/useTypedSelector";
 const App = () => {
     return (
         <div className="wrapper">
-            <SearchBar/>
+            <SearchBar />
             <div className="info">
-                <LeftScreen/>
-                <RightScreen/>
+                <LeftScreen />
+                <RightScreen />
             </div>
         </div>
     );

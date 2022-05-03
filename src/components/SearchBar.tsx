@@ -1,18 +1,21 @@
 import React, { useState } from "react";
+import { useAction } from "../hooks/useAction";
 import Shape from "../img/Shape.svg";
-import { fetchForecasts } from "../store/action-creater/forecast";
+
 const SearchBar = () => {
     const [value, setValue] = useState("");
-    
-    const getWeather = () => {
+    const { fetchForecasts } = useAction();
+    const getWeather = (e: React.SyntheticEvent): void => {
+        e.preventDefault();
         fetchForecasts(value);
-    }
+        setValue("");
+    };
+
     return (
-        <form className="search-bar">
+        <form className="search-bar" onSubmit={getWeather}>
             <input
                 value={value}
                 onChange={e => setValue(e.target.value)}
-                onClick={getWeather}
                 className="search-bar__input"
                 type="text"
                 placeholder="Moscow"
