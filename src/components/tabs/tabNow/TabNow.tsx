@@ -1,5 +1,5 @@
 import React from "react";
-import heart from "../../img/heart.svg";
+import heart from "../../../img/heart.svg";
 const TabNow = () => {
     return (
         <div className="left-info__screen now">
