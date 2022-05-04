@@ -142,12 +142,12 @@ body {
     overflow-y: auto;
     scroll-behavior: smooth;
 }
-.left-info__screen.active::-webkit-scrollbar {
+.left-info__screen::-webkit-scrollbar {
     height: 12px;
     background-color: #ffffff;
     width: 8px;
 }
-.left-info__screen.active::-webkit-scrollbar-thumb {
+.left-info__screen::-webkit-scrollbar-thumb {
     background-color: #4b4848;
 }
 .screen__WeatherIcon {
