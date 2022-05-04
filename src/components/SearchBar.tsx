@@ -7,6 +7,7 @@ const SearchBar = () => {
     const { fetchForecasts } = useAction();
     const getWeather = (e: React.FormEvent): void => {
         e.preventDefault();
+        if (!value) return;
         fetchForecasts(value);
         setValue("");
     };
