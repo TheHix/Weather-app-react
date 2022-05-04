@@ -8,7 +8,7 @@ interface FetchCurrentWeatherAction {
 }
 interface FetchCurrentWeatherSuccessAction {
     type: CurrentWetherActionTypes.FETCH_CURRENT_WEATHER_SUCCESS;
-    payload: ICuurentWether;
+    payload: ICurrentWether;
 }
 interface FetchCurrentWeatherErrorAction {
     type: CurrentWetherActionTypes.FETCH_CURRENT_WEATHER_ERROR;
@@ -26,14 +26,14 @@ interface Isys {
     sunrise: number;
     sunset: number;
 }
-interface ICuurentWether {
+interface ICurrentWether {
     weather: any[];
     main: IMain;
     name: string;
     sys: Isys;
 }
-export interface CuurentWeatherState {
-    currentWether: ICuurentWether | null;
+export interface CurrentWeatherState {
+    currentWether: ICurrentWether | null;
     loading: boolean;
     error: string | null;
 }

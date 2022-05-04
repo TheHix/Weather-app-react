@@ -1,10 +1,10 @@
 import {
     CurrentWeatherAction,
     CurrentWetherActionTypes,
-    CuurentWeatherState,
-} from "../../types/cuurentWeather";
+    CurrentWeatherState,
+} from "../../types/currentWeather";
 
-const initialState: CuurentWeatherState = {
+const initialState: CurrentWeatherState = {
     currentWether: null,
     loading: false,
     error: null,
@@ -12,7 +12,7 @@ const initialState: CuurentWeatherState = {
 export const forecastReducer = (
     state = initialState,
     action: CurrentWeatherAction
-): CuurentWeatherState => {
+): CurrentWeatherState => {
     switch (action.type) {
         case CurrentWetherActionTypes.FETCH_CURRENT_WEATHER:
             return { loading: true, error: null, currentWether: null };
