@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import { useAction } from "../../../hooks/useAction";
-import { useTypedSelector } from "../../../hooks/useTypedSelector";
+import React from "react";
 import ForecastList from "./ForecastList";
 
 const TabForecast: React.FC = () => { 

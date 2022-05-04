@@ -1,5 +1,4 @@
 import React from "react";
-import { useAction } from "../../../hooks/useAction";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
 import Loader from "../../Loader";
 import ForecastItem from "./ForecastItem";
@@ -9,7 +8,7 @@ const ForecastList = () => {
         state => state.forecast
     );
     if (loading) {
-        return <Loader />;
+        return <Loader/>;
     }
     if (error) {
         return <div className="">{error}</div>;

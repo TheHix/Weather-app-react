@@ -1,7 +1,7 @@
 import React from "react";
-const getTempInCelsius = (degreesInKelvin:any) => {
+const getTempInCelsius = (degreesInKelvin: number) => {
     return Math.round(degreesInKelvin - 273);
-}
+};
 // const getCompleteWeatherInformation = (weather:any) =>{
 //     let massWeathers = [];
 
@@ -17,31 +17,54 @@ const getTempInCelsius = (degreesInKelvin:any) => {
 //     const minutes = `0${usualTime.getMinutes()}`.slice(-2);
 //     return `${hours}:${minutes}`;
 // }
-const getDay = (item:any) => {
-    if (item.dt_txt.slice(8, 9) === '0') {
-        return item.dt_txt.slice(9, 10);
+const getDay = (dt_txt:string) => {
+    if (dt_txt.slice(8, 9) === "0") {
+        return dt_txt.slice(9, 10);
     }
 
-    return item.dt_txt.slice(8, 10);
+    return dt_txt.slice(8, 10);
+};
+const getMonth = (dt_txt:string) => {
+    const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+    return months[+dt_txt.slice(6, 7) - 1];
+};
+const getTime = (dt_txt: string) => {
+    return dt_txt.slice(11, 16);
+};
+interface IMain {
+    temp: number;
+    feels_like:number;
 }
-const getMonth = (item:any) => {
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    return months[+item.dt_txt.slice(6, 7) - 1];
+interface IItem {
+    main: IMain;
+    weather: any[];
+    dt_txt: string;
 }
-const getTime = (item:any) => {
-    return item.dt_txt.slice(11, 16);
+interface ForecastItemProps {
+    item: IItem;
 }
-interface itemInterface {
-    item: any;
-}
-const ForecastItem: React.FC<itemInterface> = ({item}) => {
-    const month = getMonth(item);
-    const day = getDay(item);
-    const time = getTime(item);
-    const temp = getTempInCelsius(item.main.temp).toString();
-    const feelsLike = getTempInCelsius(item.main.feels_like).toString();
-    const weather = item.weather[0].main;
-    const img = `https://openweathermap.org/img/wn/${item.weather[0]['icon']}@2x.png`;
+const ForecastItem: React.FC<ForecastItemProps> = ({ item }) => {
+    const {dt_txt, weather: cuurentWeather, main} = item;
+    const month = getMonth(dt_txt);
+    const day = getDay(dt_txt);
+    const time = getTime(dt_txt);
+    const temp = getTempInCelsius(main.temp).toString();
+    const feelsLike = getTempInCelsius(main.feels_like).toString();
+    const weather = cuurentWeather[0].main;
+    const img = `https://openweathermap.org/img/wn/${cuurentWeather[0]["icon"]}@2x.png`;
     return (
         <div className="week">
             <div className="week__row">
