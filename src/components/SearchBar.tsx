@@ -5,7 +5,7 @@ import Shape from "../img/Shape.svg";
 const SearchBar = () => {
     const [value, setValue] = useState("");
     const { fetchForecasts } = useAction();
-    const getWeather = (e: React.SyntheticEvent): void => {
+    const getWeather = (e: React.FormEvent): void => {
         e.preventDefault();
         fetchForecasts(value);
         setValue("");
