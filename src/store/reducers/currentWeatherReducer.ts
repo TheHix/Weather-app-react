@@ -9,7 +9,7 @@ const initialState: CurrentWeatherState = {
     loading: false,
     error: null,
 };
-export const forecastReducer = (
+export const CurrentWeatherReducer = (
     state = initialState,
     action: CurrentWeatherAction
 ): CurrentWeatherState => {

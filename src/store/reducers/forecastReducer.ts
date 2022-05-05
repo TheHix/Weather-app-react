@@ -13,7 +13,6 @@ export const forecastReducer = (
     state = initialState,
     action: ForecastAction
 ): ForecastState => {
-    //TODO: сделать fetch  current weather
     switch (action.type) {
         case ForecastActionTypes.FETCH_FORECASTS:
             return { loading: true, error: null, forecasts: [] };

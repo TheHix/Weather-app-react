@@ -18,6 +18,8 @@ const ForecastList = () => {
             <div className="forecast__city-name city-name">Aktobe</div>
             <div className="forecast__list-weeks">
                 {forecasts.map(item => {
+                    console.log(item);
+                    
                     return <ForecastItem key={item.id} item={item} />;
                 })}
             </div>
