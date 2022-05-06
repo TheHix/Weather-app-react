@@ -17,11 +17,18 @@ export const fetchCurrentWeather = (city: string = "Moscow") => {
                 type: CurrentWetherActionTypes.FETCH_CURRENT_WEATHER_SUCCESS,
                 payload: response.data,
             });
-        } catch (error) {
-            dispatch({
-                type: CurrentWetherActionTypes.FETCH_CURRENT_WEATHER_ERROR,
-                payload: "Не удалось вывести прогноз :(",
-            });
+        } catch (error: any) {
+            if (error.response.data.message === "city not found") {
+                dispatch({
+                    type: CurrentWetherActionTypes.FETCH_CURRENT_WEATHER_ERROR,
+                    payload: "Такого города не существует",
+                });
+            } else {
+                dispatch({
+                    type: CurrentWetherActionTypes.FETCH_CURRENT_WEATHER_ERROR,
+                    payload: "Не удалось вывести прогноз :(",
+                });
+            }
         }
     };
 };
