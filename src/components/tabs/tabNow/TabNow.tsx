@@ -9,7 +9,7 @@ const TabNow: React.FC = () => {
     const { currentWether, error, loading } = useTypedSelector(
         store => store.currentWeather
     );
-    const { addFavoriteCity } = useAction();
+    const { addFavoriteCity, delFavoriteCity } = useAction();
     const favoriteCities = useTypedSelector(store => store.favoriteCities);
     useEffect(() => {
         if (currentWether !== null) {
@@ -36,6 +36,8 @@ const TabNow: React.FC = () => {
                 id: currentWether!.id,
                 city: currentWether!.name,
             });
+        } else {
+            delFavoriteCity(currentWether!.id);
         }
     };
 
