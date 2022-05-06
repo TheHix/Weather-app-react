@@ -4,12 +4,12 @@ import LeftScreen from "./components/screens/LeftScreen";
 import RightScreen from "./components/screens/rightScreen/RightScreen";
 import SearchBar from "./components/SearchBar";
 import { useAction } from "./hooks/useAction";
-import { useTypedSelector } from "./hooks/useTypedSelector";
+import { storage } from "./tools/localStorage";
 const App = () => {
     const { fetchCurrentWeather, fetchForecasts } = useAction();
     useEffect(() => {
+        fetchCurrentWeather(storage.getCurrentCity() ?? "Moscow");
         fetchForecasts();
-        fetchCurrentWeather();
     }, []);
     return (
         <div className="wrapper">

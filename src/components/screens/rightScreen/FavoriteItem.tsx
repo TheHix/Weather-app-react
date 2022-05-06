@@ -1,10 +1,32 @@
 import React from "react";
+import { useAction } from "../../../hooks/useAction";
+import { IfavoriteCity } from "../../../types/favoriteCities";
+interface IFavoriteItemProps {
+    item: IfavoriteCity;
+}
+const FavoriteItem: React.FC<IFavoriteItemProps> = ({ item }) => {
+    const { delFavoriteCity, fetchForecasts, fetchCurrentWeather } =
+        useAction();
+    const handlerDeleteFavoriteCities = () => {
+        delFavoriteCity(item.id);
+    };
+    const handlerShowFavoriteCity = () => {
+        fetchForecasts(item.city);
+        fetchCurrentWeather(item.city);
+    };
 
-const FavoriteItem:React.FC = () => {
     return (
-        <li className="locations__item locations-item">
-            {"cityName"}
-            <button className="locations-item__btn">&times;</button>
+        <li
+            className="locations__item locations-item"
+            onClick={handlerShowFavoriteCity}
+        >
+            {item.city}
+            <button
+                className="locations-item__btn"
+                onClick={handlerDeleteFavoriteCities}
+            >
+                &times;
+            </button>
         </li>
     );
 };

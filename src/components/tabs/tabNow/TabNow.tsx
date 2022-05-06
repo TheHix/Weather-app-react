@@ -1,18 +1,44 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useAction } from "../../../hooks/useAction";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
 import heart from "../../../img/heart.svg";
+import { storage } from "../../../tools/localStorage";
 import { getTempInCelsius } from "../../../tools/transform";
 import Loader from "../../Loader";
-const TabNow:React.FC = () => {
+const TabNow: React.FC = () => {
     const { currentWether, error, loading } = useTypedSelector(
         store => store.currentWeather
     );
+    const { addFavoriteCity } = useAction();
+    const favoriteCities = useTypedSelector(store => store.favoriteCities);
+    useEffect(() => {
+        if (currentWether !== null) {
+            storage.saveCurrentCity(currentWether!.name);
+        }
+    }, [currentWether]);
     if (error) {
         return <div className="left-info__screen error">{error}</div>;
     }
+
     if (loading || !currentWether) {
         return <Loader />;
     }
+
+    const isFavoriteCity = Boolean(
+        favoriteCities.find((item: any) => {
+            return item.id === currentWether!.id;
+        })
+    );
+
+    const favoriteCitiesHandler = () => {
+        if (!isFavoriteCity) {
+            addFavoriteCity({
+                id: currentWether!.id,
+                city: currentWether!.name,
+            });
+        }
+    };
+
     return (
         <div className="left-info__screen now">
             <img
@@ -22,7 +48,16 @@ const TabNow:React.FC = () => {
                 }@4x.png`}
                 alt="weather-icon"
             ></img>
-            <img src={heart} className="now__icon-heart icon-btn" alt="heart" />
+            <img
+                src={heart}
+                onClick={favoriteCitiesHandler}
+                className={
+                    isFavoriteCity
+                        ? "now__icon-heart icon-btn active"
+                        : "now__icon-heart icon-btn"
+                }
+                alt="heart"
+            />
             <div className="now__temperature">
                 {getTempInCelsius(currentWether!.main.temp)}°
             </div>
