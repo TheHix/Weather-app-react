@@ -26,7 +26,7 @@ interface Isys {
     sunrise: number;
     sunset: number;
 }
-interface ICurrentWether {
+export interface ICurrentWether {
     weather: any[];
     main: IMain;
     name: string;
