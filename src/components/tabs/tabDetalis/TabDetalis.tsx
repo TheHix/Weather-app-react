@@ -7,7 +7,7 @@ import {
 } from "../../../tools/transform";
 import Loader from "../../Loader";
 
-const TabDetalis = () => {
+const TabDetalis:React.FC = () => {
     const { currentWether, error, loading } = useTypedSelector(
         store => store.currentWeather
     );
@@ -23,6 +23,10 @@ const TabDetalis = () => {
                 {currentWether!.name}
             </div>
             <ul className="detalis__list">
+                <li className="detalis__item detalis__item-like">
+                    Temperature:{" "}
+                    {getTempInCelsius(currentWether!.main.temp)}°
+                </li>
                 <li className="detalis__item detalis__item-like">
                     Feels like:{" "}
                     {getTempInCelsius(currentWether!.main.feels_like)}°
