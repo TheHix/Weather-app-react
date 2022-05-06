@@ -6,6 +6,11 @@ import SearchBar from "./components/SearchBar";
 import { useAction } from "./hooks/useAction";
 import { useTypedSelector } from "./hooks/useTypedSelector";
 const App = () => {
+    const { fetchCurrentWeather, fetchForecasts } = useAction();
+    useEffect(() => {
+        fetchForecasts();
+        fetchCurrentWeather();
+    }, []);
     return (
         <div className="wrapper">
             <SearchBar />
