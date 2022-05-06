@@ -3,7 +3,7 @@ import { useTypedSelector } from "../../../hooks/useTypedSelector";
 import Loader from "../../Loader";
 import DetalisList from "./DetalisList";
 
-const TabDetalis:React.FC = () => {
+const TabDetalis: React.FC = () => {
     const { currentWether, error, loading } = useTypedSelector(
         store => store.currentWeather
     );
@@ -18,7 +18,7 @@ const TabDetalis:React.FC = () => {
             <div className="detalis__city-name city-name">
                 {currentWether!.name}
             </div>
-            <DetalisList currentWether={currentWether}/>
+            <DetalisList currentWether={currentWether} />
         </div>
     );
 };

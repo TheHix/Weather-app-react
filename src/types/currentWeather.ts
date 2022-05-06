@@ -31,6 +31,7 @@ export interface ICurrentWether {
     main: IMain;
     name: string;
     sys: Isys;
+    id: number;
 }
 export interface CurrentWeatherState {
     currentWether: ICurrentWether | null;

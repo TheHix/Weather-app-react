@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useAction } from "../hooks/useAction";
 import Shape from "../img/Shape.svg";
 
-const SearchBar:React.FC = () => {
+const SearchBar: React.FC = () => {
     const [value, setValue] = useState("");
     const { fetchForecasts, fetchCurrentWeather } = useAction();
     const getWeather = (e: React.FormEvent): void => {
