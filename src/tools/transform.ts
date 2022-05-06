@@ -14,6 +14,13 @@ export const getDay = (dt_txt:string) => {
 
     return dt_txt.slice(8, 10);
 };
+export const getCompleteWeatherInformation = (weathers:any) => {
+    const massWeathers = weathers.map((item: any) => {
+        return item.main
+    })
+
+    return massWeathers.join(', ');
+}
 export const getMonth = (dt_txt:string) => {
     const months = [
         "January",
