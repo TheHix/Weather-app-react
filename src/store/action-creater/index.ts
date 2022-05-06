@@ -3,5 +3,5 @@ import * as CurrentWeatherActionCreaters from "./currentWeather";
 
 export default {
     ...ForecastActionCreaters,
-    ...CurrentWeatherActionCreaters
-}
+    ...CurrentWeatherActionCreaters,
+};
