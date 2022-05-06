@@ -4,14 +4,14 @@ import Shape from "../img/Shape.svg";
 
 const SearchBar = () => {
     const [value, setValue] = useState("");
-    const { fetchForecasts } = useAction();
+    const { fetchForecasts, fetchCurrentWeather } = useAction();
     const getWeather = (e: React.FormEvent): void => {
         e.preventDefault();
         if (!value) return;
         fetchForecasts(value);
+        fetchCurrentWeather(value);
         setValue("");
     };
-
     return (
         <form className="search-bar" onSubmit={getWeather}>
             <input
