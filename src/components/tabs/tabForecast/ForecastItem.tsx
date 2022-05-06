@@ -18,14 +18,14 @@ interface ForecastItemProps {
     item: IItem;
 }
 const ForecastItem: React.FC<ForecastItemProps> = ({ item }) => {
-    const { dt_txt, weather: cuurentWeather, main } = item;
+    const { dt_txt, weather: weatherForecast, main } = item;
     const month = getMonth(dt_txt);
     const day = getDay(dt_txt);
     const time = getTime(dt_txt);
     const temp = getTempInCelsius(main.temp).toString();
     const feelsLike = getTempInCelsius(main.feels_like).toString();
-    const weather = cuurentWeather[0].main;
-    const img = `https://openweathermap.org/img/wn/${cuurentWeather[0]["icon"]}@2x.png`;
+    const weather = weatherForecast[0].main;
+    const img = `https://openweathermap.org/img/wn/${weatherForecast[0]["icon"]}@2x.png`;
     return (
         <div className="week">
             <div className="week__row">

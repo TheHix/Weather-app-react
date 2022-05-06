@@ -121,7 +121,7 @@ body {
     display: flex;
 }
 .info-block {
-    width: 50%;
+    flex: 1 1 50%;
 }
 .left-info {
     display: flex;
@@ -132,15 +132,22 @@ body {
     border: 1px solid black;
     border-left: none;
 }
+
 .left-info__screen {
     width: 100%;
-    border-bottom: 1px solid black;
     padding: 16px;
     position: relative;
-    height: 345px;
+    height: 100%;
     display: block;
     overflow-y: auto;
-    scroll-behavior: smooth;
+}
+.left-info__screen.error {
+    font-size: 20px;
+    text-align: center;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .left-info__screen::-webkit-scrollbar {
     height: 12px;
@@ -150,7 +157,7 @@ body {
 .left-info__screen::-webkit-scrollbar-thumb {
     background-color: #4b4848;
 }
-.screen__WeatherIcon {
+.now__WeatherIcon {
     position: absolute;
     width: 170px;
     height: 170px;
@@ -194,7 +201,11 @@ li {
 .detalis__list li {
     font-size: 26px;
 }
+.forecast__city-name {
+    margin-bottom: 15px;
+}
 .buttons {
+    border-top: 1px solid black;
     display: flex;
     height: 45px;
 }

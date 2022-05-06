@@ -4,10 +4,11 @@ const Loader: React.FC = () => {
     return (
         <div
             style={{
-                marginTop:"7rem",
+                marginTop: ".5rem",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                height: "100%",
             }}
         >
             <div className="lds-dual-ring"></div>
