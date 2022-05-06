@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FavoriteList = () => {
+const FavoriteList:React.FC = () => {
     return (
         <ul className="locations__list"></ul>
     );

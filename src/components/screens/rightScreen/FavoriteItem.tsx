@@ -1,6 +1,6 @@
 import React from "react";
 
-const FavoriteItem = () => {
+const FavoriteItem:React.FC = () => {
     return (
         <li className="locations__item locations-item">
             {"cityName"}

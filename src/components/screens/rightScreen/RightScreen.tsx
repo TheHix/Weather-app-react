@@ -1,6 +1,6 @@
 import React from "react";
 
-const RightScreen = () => {
+const RightScreen:React.FC = () => {
     return (
         <div className="right-info info-block">
             <div className="right-info__locations">

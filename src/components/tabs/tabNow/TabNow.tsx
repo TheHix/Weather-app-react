@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
 import heart from "../../../img/heart.svg";
-import { fetchCurrentWeather } from "../../../store/action-creater/currentWeather";
 import { getTempInCelsius } from "../../../tools/transform";
 import Loader from "../../Loader";
-const TabNow = () => {
+const TabNow:React.FC = () => {
     const { currentWether, error, loading } = useTypedSelector(
         store => store.currentWeather
     );
@@ -17,11 +16,11 @@ const TabNow = () => {
     return (
         <div className="left-info__screen now">
             <img
-                className="now__WeatherIcon"
+                className="now__weather-icon"
                 src={`https://openweathermap.org/img/wn/${
                     currentWether!.weather[0]["icon"]
                 }@4x.png`}
-                alt="pressF"
+                alt="weather-icon"
             ></img>
             <img src={heart} className="now__icon-heart icon-btn" alt="heart" />
             <div className="now__temperature">

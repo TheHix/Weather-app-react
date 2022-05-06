@@ -157,7 +157,7 @@ body {
 .left-info__screen::-webkit-scrollbar-thumb {
     background-color: #4b4848;
 }
-.now__WeatherIcon {
+.now__weather-icon {
     position: absolute;
     width: 170px;
     height: 170px;

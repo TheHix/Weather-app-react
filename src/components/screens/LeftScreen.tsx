@@ -7,7 +7,7 @@ const tabs = {
     detalis: 2,
     forecast: 3,
 };
-const LeftScreen = () => {
+const LeftScreen:React.FC = () => {
     const [tab, setTab] = useState(tabs.now);
     return (
         <div className="left-info info-block">
