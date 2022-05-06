@@ -230,6 +230,9 @@ li {
     color: #ffffff;
     background: #000000;
 }
+.now__icon-heart.active {
+    opacity: 0.4;
+}
 .locations__name {
     min-height: 68px;
     font-size: 28px;
