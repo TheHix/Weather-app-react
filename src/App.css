@@ -183,7 +183,7 @@ body {
 }
 .now__city-name {
     position: absolute;
-    width: 120px;
+    max-width: 210px;
     left: 17px;
     bottom: 23px;
 }
