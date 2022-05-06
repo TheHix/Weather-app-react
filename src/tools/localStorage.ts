@@ -5,7 +5,7 @@ export const storage = {
             return JSON.parse(favoriteCitiesJson);
         }
     },
-    saveFavoriteCities(FavoriteCities: any[]): void {
+    saveFavoriteCities(FavoriteCities: string[]): void {
         localStorage.setItem("favoriteCities", JSON.stringify(FavoriteCities));
     },
     getCurrentCity() {
@@ -14,7 +14,7 @@ export const storage = {
             return JSON.parse(currentCityJson);
         }
     },
-    saveCurrentCity(currentCity: any[]): void {
+    saveCurrentCity(currentCity: string): void {
         localStorage.setItem("currentCity", JSON.stringify(currentCity));
     },
 };
