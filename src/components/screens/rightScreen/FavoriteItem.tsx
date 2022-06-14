@@ -1,5 +1,6 @@
 import React from "react";
 import { useAction } from "../../../hooks/useAction";
+import { storage } from "../../../tools/localStorage";
 import { IfavoriteCity } from "../../../types/favoriteCities";
 interface IFavoriteItemProps {
     item: IfavoriteCity;
@@ -11,8 +12,10 @@ const FavoriteItem: React.FC<IFavoriteItemProps> = ({ item }) => {
         delFavoriteCity(item.id);
     };
     const handlerShowFavoriteCity = () => {
-        fetchForecasts(item.city);
-        fetchCurrentWeather(item.city);
+        if (item.city !== storage.getCurrentCity()) {
+            fetchForecasts(item.city);
+            fetchCurrentWeather(item.city);
+        }
     };
 
     return (

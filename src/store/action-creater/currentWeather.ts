@@ -13,6 +13,7 @@ export const fetchCurrentWeather = (city: string = "Moscow") => {
             const response = await axios.get(
                 `${URL.CURRENT}?q=${city}&appid=${URL.API_KEY}`
             );
+            
             dispatch({
                 type: CurrentWetherActionTypes.FETCH_CURRENT_WEATHER_SUCCESS,
                 payload: response.data,

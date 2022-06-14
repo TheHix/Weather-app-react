@@ -9,13 +9,13 @@ export const fetchForecasts = (city: string = "Moscow") => {
             dispatch({ type: ForecastActionTypes.FETCH_FORECASTS });
             const response = await axios.get(
                 `${URL.TIME_INTERVALS}?q=${city}&appid=${URL.API_KEY}`
-            );
+            ); 
             dispatch({
                 type: ForecastActionTypes.FETCH_FORECASTS_SUCCESS,
                 payload: response.data.list,
-            });
+            }); 
         } catch (error: any) {
-            if (error.response.data.message === "city not found") {
+            if (error.response.data?.message === "city not found") {
                 dispatch({
                     type: ForecastActionTypes.FETCH_FORECASTS_ERROR,
                     payload: "Такого города не существует",
