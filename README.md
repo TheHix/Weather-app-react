@@ -1,2 +1,22 @@
-# Weather forecast
-### This is the second version of the weather app, rewritten using React + Redux + Typescript
+# Weather app
+С помощью этого SPA вы можете узнать погоду в выбранном вами городе, как на сегодня, так и прогноз на 16 дней вперёд. Также это приложение дает возможнсть добавления избранных городов в свой личный список. На первой вкладке вы увидете погоду на сегодня, на второй детальную погоду сегоднешнего дня, и на третьей прогноз на 16 дней.  
+
+## Запуск
+1. Клонируйте этот репозиторий
+``
+git clone https://github.com/TheHix/Weather-app-react.git
+``
+
+2. Подгрузите зависимости 
+``
+npm install
+``
+3. Запустите проект локально
+``
+npm start
+``
+## Использованные технологии
+- React
+- TypeScript
+- Readux, Redux Thunk
+- CSS + БЭМ
